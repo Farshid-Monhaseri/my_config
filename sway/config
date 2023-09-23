@@ -8,7 +8,8 @@ set $up k
 set $right l
 
 set $term alacritty 
-set $menu rofi -show run -theme $HOME/.config/rofi/config.rasi | xargs swaymsg exec
+set $menu wofi
+set $menu_command $menu --term=$term | xargs swaymsg exec
 
 # Audio Volume up/down shortcuts
 bindsym XF86AudioRaiseVolume exec wpctl set-sink-volume @DEFAULT_SINK@ 5%+
@@ -29,7 +30,7 @@ exec swayidle -w \
 ### Key bindings
 bindsym $mod+t exec $term
 bindsym $mod+Shift+q kill
-bindsym $mod+d exec $menu
+bindsym $mod+d exec $menu_command
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
 # Move your focus around

@@ -1,0 +1,8 @@
+
+mode=2
+hide_scroll=true
+allow_images=true
+allow_markup=false
+dynamic_lines=true
+layer=overlay
+gtk_dark=true
